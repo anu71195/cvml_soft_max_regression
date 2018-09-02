@@ -4,3 +4,22 @@ ConvNets=CNN
 ConvNet architectures make the explicit assumption that the inputs are images, which allows us to encode certain properties into the architecture
 
 Neural Net is always fully connected. With dropouts enabled we can reduce the computations.
+Unlike a regular Neural Network, the layers of a ConvNet have neurons arranged in 3 dimensions: width, height, depth
+(initial)3D input volume == 2D image + color channels
+(intermediate)3D output volume => obtained by applying a layer of the ConvNet
+(intermediate)3D input volume => output of previous layer
+(final)3D output volume => depth=1; vector class scores
+There are MAINLY 3 types of layers:
+CONV
+RELU
+POOL
+
+Each CONV layer is a list of filters, each filter(with its own kernel) will add to the depth of output volume. 
+RELU layer applies element wise activation, leaving size of input volume unchanged
+POOL layer converts to smaller width and height (downsampling), with values = MAX|MIN|some_f(kernel) in kernel (image is padded at edges to fit to multiple of kernel)
+
+That kernel here, is not constant. It itself is the region of one neuron here.
+CONV layer will compute the output of neurons that are connected to local regions in the input, each computing a dot product between their weights and a small region they are connected to in the input volume.
+>> each region's kernel function is calculated and then multiplied by weight of the neuron of that region
+>> The region has depth too, and is the same as depth of the input volume.
+	"receptive field of a neuron is 3D"

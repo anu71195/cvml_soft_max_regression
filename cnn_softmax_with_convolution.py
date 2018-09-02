@@ -93,6 +93,10 @@ def model_fn(features, labels, mode):
     return estim_specs
 
 # Build the Estimator
+"""
+Pre-made Estimators create and manage Graph and Session objects by themselves. 
+Furthermore, pre-made Estimators let you experiment with different model architectures by making only minimal code changes. 
+"""
 model = tf.estimator.Estimator(model_fn)
 
 # Define the input function for training

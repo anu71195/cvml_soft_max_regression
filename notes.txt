@@ -1,0 +1,6 @@
+Notes:
+https://cs231n.github.io/convolutional-networks/
+ConvNets=CNN
+ConvNet architectures make the explicit assumption that the inputs are images, which allows us to encode certain properties into the architecture
+
+Neural Net is always fully connected. With dropouts enabled we can reduce the computations.
